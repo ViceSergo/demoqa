@@ -1,5 +1,6 @@
 # from selenium.webdriver.common.by import By
 from pages.demoqa import DemoQa
+import time
 
 
 def test_check_icon(browser):
@@ -12,6 +13,8 @@ def test_check_icon(browser):
     # else:
     #     print("Найдено")
 
-    demoqa_page =DemoQa(browser)
-    demoqa_page.visit()
-    assert demoqa_page.exist_icon()
+    demo_qa_page =DemoQa(browser)
+    demo_qa_page.visit()
+    demo_qa_page.click_on_the_icon()
+    assert demo_qa_page.equal_url()
+    assert demo_qa_page.exist_icon()
