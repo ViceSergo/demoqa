@@ -1,4 +1,4 @@
-# from selenium.webdriver.common.by import By
+from selenium.webdriver.common.by import By
 from pages.demoqa import DemoQa
 from pages.elements_page import ElementsPage
 import time
