@@ -14,11 +14,23 @@ class BasePage:
         else:
             return False
 
+    # get - перейти по урлу
     def visit(self):
         return self.driver.get(self.base_url)
 
-    # def find_element(self, locator):
-    #     return self.driver.find_element(By.CSS_SELECTOR, locator)
-
+    # Стрелка назад в браузере
+    def back(self):
+        self.driver.back()
+    # Стрелка вперед в браузере
+    def forward(self):
+        self.driver.forward()
+    # обновить страницу
+    def refresh(self):
+        self.driver.refresh()
+    # получить title страницы
+    def get_title(self):
+        return self.driver.title
+    # Получить текущий урл
     def get_url(self):
         return self.driver.current_url
+    # set_window_size() - устанавливает размеры страницы
