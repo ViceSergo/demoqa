@@ -1,4 +1,5 @@
 import time
+import logging
 from selenium.webdriver.common.by import By
 
 
@@ -33,4 +34,27 @@ class BasePage:
     # Получить текущий урл
     def get_url(self):
         return self.driver.current_url
+    #выводит сообщение
+    def alert(self):
+        try:
+            return self.driver.switch_to.alert
+        except Exception as ex:
+            logging.log(1,ex)
+            return False
+
+    # выводит сообщение и ждет пока пользователь введет текст и потом возвращает его
+    def prompt(self):
+        try:
+            return self.driver.switch_to.alert
+        except Exception as ex:
+            logging.log(1, ex)
+            return False
+
+        # выводит сообщение и ждет пока пользователь нажмет ок или закрыть
+    def confirm(self):
+        try:
+            return self.driver.switch_to.alert
+        except Exception as ex:
+            logging.log(1, ex)
+            return False
     # set_window_size() - устанавливает размеры страницы
