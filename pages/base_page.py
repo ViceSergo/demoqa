@@ -1,6 +1,7 @@
 import time
 import logging
 from selenium.webdriver.common.by import By
+from components.components import WebElement
 
 
 class BasePage:
@@ -8,6 +9,8 @@ class BasePage:
     def __init__(self,driver,base_url):
         self.driver = driver
         self.base_url = base_url
+
+        self.viewport = WebElement(driver,'head>meta:nth-child(2)')
 
     def equal_url(self):
         if self.get_url()==self.base_url:
@@ -57,4 +60,3 @@ class BasePage:
         except Exception as ex:
             logging.log(1, ex)
             return False
-    # set_window_size() - устанавливает размеры страницы

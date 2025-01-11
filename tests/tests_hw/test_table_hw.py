@@ -1,6 +1,6 @@
 import time
 from pages.web_tables import WebTables
-from selenium.webdriver.common.keys import Keys
+
 
 # 1. Автоматизируйте тест кейс, страница https://demoqa.com/webtables
 def test_modal_tables(browser):

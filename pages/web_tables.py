@@ -6,6 +6,7 @@ class WebTables(BasePage):
     def __init__(self,driver):
         self.base_url = 'https://demoqa.com/webtables'
         super().__init__(driver,self.base_url)
+
         #Поле, что строки отсутствуют
         self.no_data = WebElement(driver,'div.rt-noData')
         # объекты таблицы
@@ -20,6 +21,7 @@ class WebTables(BasePage):
         self.btn_value_5 = WebElement(driver,"//*[contains(text(),'5 rows')]",'xpath')
         self.number_page=WebElement(driver,'.-center > span.-pageInfo > div > input')
         self.total_page=WebElement(driver,'.-totalPages')
+        self.headers = WebElement(driver,'.rt-resizable-header')
         # объекты формы регестрации
         self.registration_form = WebElement(driver,'.modal-content')
         self.first_name_form = WebElement(driver,'#firstName')
